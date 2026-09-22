@@ -201,7 +201,7 @@
                 <!-- Center Circular Profile Frame with Solid White Border -->
                 <div class="hero-avatar-circle-wrapper">
                   <input type="file" accept="image/*" id="photoUpload" style="display:none">
-                  <div class="hero-avatar-frame has-photo" id="hero-avatar-container" role="button" tabindex="0" aria-label="Upload or change profile photo" style="background-image: url('profile-photo.jpg');">
+                  <div class="hero-avatar-frame has-photo" id="hero-avatar-container" role="button" tabindex="0" aria-label="Upload or change profile photo" title="Click or drop your photo here" style="background-image: url('maha_img1.jpeg');">
                     <div class="avatar-upload-prompt" id="avatar-upload-prompt" style="display:none;">
                       <div class="avatar-upload-icon-circle">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -209,9 +209,20 @@
                           <circle cx="12" cy="13" r="4"></circle>
                         </svg>
                       </div>
-                      <span class="avatar-upload-label">Upload</span>
+                      <span class="avatar-upload-label">Upload Photo</span>
                     </div>
-                    <img id="avatar-preview-img" src="profile-photo.jpg" alt="Mahalakshmi Ravichandran" class="hero-avatar-img-circle" />
+                    <img id="avatar-preview-img" src="maha_img1.jpeg" alt="Mahalakshmi Ravichandran" class="hero-avatar-img-circle" />
+                  </div>
+
+                  <!-- Choose Photo Control -->
+                  <div class="choose-photo-action-bar">
+                    <button type="button" id="choose-photo-btn" class="choose-photo-btn" aria-label="Choose Photo from Computer" title="Choose your photo from computer">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                      </svg>
+                      <span>Choose Photo</span>
+                    </button>
                   </div>
                 </div>
 
@@ -923,6 +934,36 @@
     <button id="floating-back-to-top" class="floating-back-to-top" aria-label="Scroll back to top" title="Back to top">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
+
+    <!-- Owner Verification Modal (Secured) -->
+    <div id="photo-auth-modal" class="custom-modal-overlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="photo-modal-title">
+      <div class="custom-modal-card">
+        <div class="custom-modal-header">
+          <div class="custom-modal-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 id="photo-modal-title" class="custom-modal-title">Owner Verification</h3>
+            <p class="custom-modal-subtitle">Enter owner passcode to customize photo</p>
+          </div>
+        </div>
+        <form id="photo-auth-form" class="custom-modal-body">
+          <label for="photo-password-input" class="custom-modal-label">Security Passcode:</label>
+          <div class="password-input-row">
+            <input type="password" id="photo-password-input" class="custom-modal-input" placeholder="Enter secret code" autocomplete="off" required />
+            <button type="button" id="toggle-pwd-visibility" class="toggle-pwd-btn" aria-label="Toggle password visibility">Show</button>
+          </div>
+          <p id="photo-auth-error" class="custom-modal-error" style="display: none;">Access denied. Incorrect security code.</p>
+          <div class="custom-modal-actions">
+            <button type="button" id="photo-auth-cancel" class="btn btn-secondary-modal">Cancel</button>
+            <button type="submit" id="photo-auth-submit" class="btn btn-primary-modal">Unlock &amp; Choose</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <!-- Pure Vanilla JavaScript -->
     <script src="./script.js"></script>

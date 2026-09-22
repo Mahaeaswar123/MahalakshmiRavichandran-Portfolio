@@ -974,7 +974,7 @@ section {
   cursor: pointer;
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center 22%;
   outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -989,7 +989,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 22%;
   border-radius: 50%;
   display: block;
   pointer-events: none;
@@ -1038,6 +1038,225 @@ section {
 .avatar-img-hidden {
   display: none !important;
   opacity: 0 !important;
+}
+
+/* Choose Photo & Reset Action Bar */
+.choose-photo-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  width: 100%;
+}
+
+.choose-photo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFFFF;
+  color: #2D241E;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  box-shadow: 0 4px 14px rgba(58, 48, 38, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.choose-photo-btn svg {
+  color: #D97706;
+  transition: transform 0.2s ease;
+}
+
+.choose-photo-btn:hover {
+  background: #FAF8F5;
+  border-color: #D97706;
+  color: #B45309;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(58, 48, 38, 0.15);
+}
+
+.choose-photo-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* Custom Password Authentication Modal */
+.custom-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 22, 16, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.custom-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-modal-card {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(229, 222, 214, 0.9);
+  transform: translateY(12px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-modal-overlay.active .custom-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.custom-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.custom-modal-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(217, 119, 6, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.custom-modal-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2D241E;
+  margin: 0;
+}
+
+.custom-modal-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: #786C5E;
+  margin: 0.25rem 0 0 0;
+}
+
+.custom-modal-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #4A3E35;
+  margin-bottom: 0.45rem;
+}
+
+.password-input-row {
+  display: flex;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.custom-modal-input {
+  width: 100%;
+  padding: 0.65rem 3.5rem 0.65rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: #2D241E;
+  background: #FAFAF8;
+  border: 1px solid #D5CCC3;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.custom-modal-input:focus {
+  border-color: #D97706;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.18);
+}
+
+.toggle-pwd-btn {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8B7B68;
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+}
+
+.toggle-pwd-btn:hover {
+  color: #D97706;
+}
+
+.custom-modal-error {
+  color: #DC2626;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 500;
+}
+
+.custom-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.btn-secondary-modal {
+  padding: 0.55rem 1.05rem;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #F3ECE2;
+  color: #4A3E35;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary-modal:hover {
+  background: #E8DFD3;
+}
+
+.btn-primary-modal {
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #D97706;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary-modal:hover {
+  background: #B45309;
+  transform: translateY(-1px);
 }
 
 .hero-floating-card-pill {

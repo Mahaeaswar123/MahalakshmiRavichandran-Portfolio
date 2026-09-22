@@ -1570,6 +1570,36 @@ function initPortfolio() {
   const previewImg = document.getElementById('avatar-preview-img');
   const uploadPrompt = document.getElementById('avatar-upload-prompt');
 
+  const choosePhotoBtn = document.getElementById('choose-photo-btn');
+  const photoAuthModal = document.getElementById('photo-auth-modal');
+  const photoAuthForm = document.getElementById('photo-auth-form');
+  const photoPasswordInput = document.getElementById('photo-password-input');
+  const photoAuthError = document.getElementById('photo-auth-error');
+  const photoAuthCancel = document.getElementById('photo-auth-cancel');
+  const togglePwdVisibility = document.getElementById('toggle-pwd-visibility');
+
+  const DEFAULT_PHOTO_URL = 'maha_img1.jpeg';
+  // Cryptographic SHA-256 hash of the default owner secret key (never stored in plaintext)
+  const SECURE_OWNER_HASH = 'e4cbb95fc626c9ddb979c7d3309658a4ccaa7aa4a540d68b1f93323e94243f57';
+
+  // Secure SHA-256 computation via browser Web Crypto API
+  async function computeHash(str) {
+    if (!window.crypto || !window.crypto.subtle) {
+      // Fallback simple bit-shift hash
+      let h = 0;
+      for (let i = 0; i < str.length; i++) {
+        h = ((h << 5) - h) + str.charCodeAt(i);
+        h |= 0;
+      }
+      return String(h);
+    }
+    const encoder = new TextEncoder();
+    const data = encoder.encode(str);
+    const hashBuffer = await window.crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
   // Helper function to activate photo inside the circular container edge-to-edge
   function setAvatarPhoto(url) {
     if (!url) return;
@@ -1593,17 +1623,16 @@ function initPortfolio() {
     const savedPhoto = localStorage.getItem('portfolio_user_photo');
     if (savedPhoto) {
       setAvatarPhoto(savedPhoto);
-    } else if (previewImg && previewImg.src && !previewImg.classList.contains('avatar-img-hidden')) {
-      setAvatarPhoto(previewImg.src);
+    } else {
+      setAvatarPhoto(DEFAULT_PHOTO_URL);
     }
   } catch (err) {
-    // Gracefully handle sandboxed storage restrictions
+    setAvatarPhoto(DEFAULT_PHOTO_URL);
   }
 
-  // Fallback if image fails to load
+  // Image error handling: if image is not yet available, show clean upload prompt
   if (previewImg) {
     previewImg.addEventListener('error', () => {
-      // If the current src fails to load and no photo exists, show prompt
       if (mainCircle) {
         mainCircle.classList.remove('has-photo');
         mainCircle.style.backgroundImage = '';
@@ -1615,50 +1644,176 @@ function initPortfolio() {
     });
   }
 
-  if (photoUpload) {
-    function openFilePicker(e) {
-      if (e) {
-        e.stopPropagation();
+  function handlePhotoFile(file) {
+    if (!file || !file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      if (!event.target || !event.target.result) return;
+      const resultUrl = event.target.result;
+      setAvatarPhoto(resultUrl);
+      try {
+        localStorage.setItem('portfolio_user_photo', resultUrl);
+      } catch (err) {
+        // Ignore if storage exceeds limit
       }
-      photoUpload.click();
-    }
+    };
+    reader.readAsDataURL(file);
+  }
 
-    // Clicking anywhere on the main circle triggers photo picker
+  // Password Modal Functions
+  function openAuthModal() {
+    if (!photoAuthModal) {
+      if (photoUpload) photoUpload.click();
+      return;
+    }
+    photoAuthModal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      photoAuthModal.classList.add('active');
+      if (photoPasswordInput) {
+        photoPasswordInput.value = '';
+        photoPasswordInput.focus();
+      }
+      if (photoAuthError) {
+        photoAuthError.style.display = 'none';
+      }
+    });
+  }
+
+  function closeAuthModal() {
+    if (!photoAuthModal) return;
+    photoAuthModal.classList.remove('active');
+    setTimeout(() => {
+      photoAuthModal.style.display = 'none';
+      if (photoAuthError) photoAuthError.style.display = 'none';
+    }, 200);
+  }
+
+  if (choosePhotoBtn) {
+    choosePhotoBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openAuthModal();
+    });
+  }
+
+  if (photoAuthCancel) {
+    photoAuthCancel.addEventListener('click', closeAuthModal);
+  }
+
+  if (photoAuthModal) {
+    photoAuthModal.addEventListener('click', (e) => {
+      if (e.target === photoAuthModal) {
+        closeAuthModal();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && photoAuthModal.classList.contains('active')) {
+        closeAuthModal();
+      }
+    });
+  }
+
+  if (togglePwdVisibility && photoPasswordInput) {
+    togglePwdVisibility.addEventListener('click', () => {
+      const isPassword = photoPasswordInput.type === 'password';
+      photoPasswordInput.type = isPassword ? 'text' : 'password';
+      togglePwdVisibility.textContent = isPassword ? 'Hide' : 'Show';
+    });
+  }
+
+  let failedAttempts = 0;
+  let lockoutTimer = null;
+
+  if (photoAuthForm) {
+    photoAuthForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (lockoutTimer) return;
+
+      const enteredPwd = (photoPasswordInput ? photoPasswordInput.value.trim() : '');
+      if (!enteredPwd) return;
+
+      const inputHash = await computeHash(enteredPwd);
+      let customHash = null;
+      try {
+        customHash = localStorage.getItem('owner_custom_pin_hash');
+      } catch (err) {}
+
+      // Verified strictly against cryptographic hash — plaintext code is never exposed
+      const isAuthorized = (inputHash === SECURE_OWNER_HASH) || (customHash && inputHash === customHash);
+
+      if (isAuthorized) {
+        failedAttempts = 0;
+        try {
+          sessionStorage.setItem('owner_auth_active', '1');
+        } catch (err) {}
+        closeAuthModal();
+        if (photoUpload) {
+          photoUpload.click();
+        }
+      } else {
+        failedAttempts++;
+        if (photoAuthError) {
+          if (failedAttempts >= 5) {
+            photoAuthError.textContent = 'Security lockout: 5 failed attempts. Please wait 30 seconds.';
+            photoAuthError.style.display = 'block';
+            lockoutTimer = setTimeout(() => {
+              failedAttempts = 0;
+              lockoutTimer = null;
+              photoAuthError.style.display = 'none';
+            }, 30000);
+          } else {
+            photoAuthError.textContent = 'Access denied. Incorrect security passcode.';
+            photoAuthError.style.display = 'block';
+          }
+        }
+        if (photoPasswordInput) {
+          photoPasswordInput.value = '';
+          photoPasswordInput.focus();
+        }
+      }
+    });
+  }
+
+  if (photoUpload) {
+    // Clicking anywhere on the main circle triggers photo picker via password modal
     if (mainCircle) {
-      mainCircle.addEventListener('click', openFilePicker);
+      mainCircle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openAuthModal();
+      });
       mainCircle.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          photoUpload.click();
+          openAuthModal();
+        }
+      });
+
+      // Drag and drop photo onto the avatar circle
+      mainCircle.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mainCircle.style.borderColor = '#00C48C';
+      });
+      mainCircle.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mainCircle.style.borderColor = '#FFFFFF';
+      });
+      mainCircle.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mainCircle.style.borderColor = '#FFFFFF';
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handlePhotoFile(e.dataTransfer.files[0]);
         }
       });
     }
 
-    // Handle file selection
+    // Handle file selection via input
     photoUpload.addEventListener('change', (e) => {
       const file = e.target.files && e.target.files[0];
-      if (!file) return;
-
-      if (!file.type.startsWith('image/')) {
-        return;
+      if (file) {
+        handlePhotoFile(file);
       }
-
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (!event.target || !event.target.result) return;
-        const resultUrl = event.target.result;
-
-        // Display photo inside circular container edge-to-edge
-        setAvatarPhoto(resultUrl);
-
-        // Persist to localStorage
-        try {
-          localStorage.setItem('portfolio_user_photo', resultUrl);
-        } catch (err) {
-          // Ignore if payload exceeds localStorage limits
-        }
-      };
-      reader.readAsDataURL(file);
     });
   }
 }

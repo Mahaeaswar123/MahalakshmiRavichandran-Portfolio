@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahalakshmi Ravichandran | Portfolio</title>
+    <meta name="description" content="Professional personal portfolio of Mahalakshmi Ravichandran — Full Stack & Flutter Developer with an elegant warm-neutral glassmorphism aesthetic." />
+    <meta property="og:title" content="Mahalakshmi Ravichandran | Portfolio" />
+    <meta property="og:description" content="Building innovative, user-focused web and mobile applications — from real-time safety apps to AI-powered risk models." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Web Fonts: Playfair Display, Cormorant Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+    <!-- Pure CSS Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Ambient Background Lighting Orbs & Patterns for Rich Glass Refraction -->
+    <div class="ambient-background" aria-hidden="true">
+      <div class="ambient-orb orb-1"></div>
+      <div class="ambient-orb orb-2"></div>
+      <div class="ambient-orb orb-3"></div>
+      <div class="ambient-orb orb-4"></div>
+      <div class="ambient-orb orb-5"></div>
+      <div class="ambient-pattern"></div>
+    </div>
+
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay" aria-hidden="true"></div>
+
+    <!-- ====================================================================
+         NAVBAR: MINIMAL PILL-SHAPED FLOATING GLASS NAV
+         ==================================================================== -->
+    <header id="main-navbar">
+      <div class="nav-pill-wrapper">
+        <div class="glass-nav-pill" id="navbar-pill">
+          <!-- Monogram Logo / Brand Name (Left) -->
+          <!-- EDITABLE: Monogram and display name -->
+          <a href="#hero" id="nav-brand-link" class="nav-logo" aria-label="Mahalakshmi Ravichandran Homepage">
+            <div id="nav-logo-monogram" class="nav-logo-mark">MR</div>
+            <div>
+              <span id="nav-brand-name" class="nav-logo-text">Mahalakshmi R.</span>
+              <span id="nav-brand-role" class="nav-logo-subtitle">Developer</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Links (Center) -->
+          <nav id="desktop-nav" aria-label="Main Navigation">
+            <ul id="nav-links-list" class="nav-links">
+              <li><a href="#about" id="nav-link-about" class="nav-link">About</a></li>
+              <li><a href="#skills" id="nav-link-skills" class="nav-link">Skills</a></li>
+              <li><a href="#experience" id="nav-link-experience" class="nav-link">Internships</a></li>
+              <li><a href="#education" id="nav-link-education" class="nav-link">Education</a></li>
+              <li><a href="#portfolio" id="nav-link-portfolio" class="nav-link">Projects</a></li>
+              <li><a href="#certifications" id="nav-link-certs" class="nav-link">Certifications</a></li>
+              <li><a href="#contact" id="nav-link-contact" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Action & Mobile Hamburger (Right) -->
+          <div id="nav-actions-group" class="nav-actions">
+            <a href="#contact" id="nav-quick-cta-btn" class="btn btn-primary btn-sm">Get in Touch</a>
+            <button id="hamburger-toggle" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <ul id="mobile-links-list" class="mobile-nav-links">
+        <li><a href="#about" id="mobile-link-about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" id="mobile-link-skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience" id="mobile-link-experience" class="mobile-nav-link">Internships</a></li>
+        <li><a href="#education" id="mobile-link-education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#portfolio" id="mobile-link-portfolio" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#certifications" id="mobile-link-certs" class="mobile-nav-link">Certifications</a></li>
+        <li><a href="#contact" id="mobile-link-contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div style="display:flex; gap:0.75rem; justify-content:center; margin-top:1.5rem; margin-bottom:1rem;">
+        <a href="https://www.linkedin.com/in/mahalakshmi-ravichandran-370a4939b" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile" title="LinkedIn: linkedin.com/in/mahalakshmi-ravichandran-370a4939b">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://github.com/Mahaeaswar123" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile" title="GitHub: github.com/Mahaeaswar123">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+      </div>
+      <a href="#contact" id="mobile-cta-btn" class="btn btn-primary mobile-drawer-cta">Let's Connect</a>
+    </div>
+
+    <main>
+      <!-- ==================================================================
+           SECTION 1: HERO / HOME (FOLLOWING SCREENSHOT 1 REFERENCE)
+           ================================================================== -->
+      <section id="hero" class="reference-hero-section">
+        <div class="container hero-container">
+          <div class="reference-hero-layout">
+            
+            <!-- Left Hero Column -->
+            <div class="hero-left-content">
+              <!-- Overline -->
+              <span class="hero-overline-tag hero-animate hero-anim-1">SOFTWARE DEVELOPMENT STUDENT</span>
+
+              <!-- Name Heading: Mahalakshmi (regular) + Ravichandran (italic serif) -->
+              <h1 class="hero-display-name hero-animate hero-anim-2">
+                <span class="hero-first-name">Mahalakshmi</span>
+                <em class="hero-last-name">Ravichandran</em>
+              </h1>
+
+              <!-- Subtitle -->
+              <h2 class="hero-role-title hero-animate hero-anim-3">
+                Full Stack &amp; Flutter Developer | B.Tech Information Science Student
+              </h2>
+
+              <!-- Short Professional Introduction -->
+              <p class="hero-intro-paragraph hero-animate hero-anim-4">
+                Developing responsive websites, real-time mobile applications, and AI/ML-based solutions to address practical real-world problems.
+              </p>
+
+              <!-- Action Buttons Row 1 & Row 2 -->
+              <div class="hero-cta-group hero-animate hero-anim-5">
+                <div class="hero-btn-row">
+                  <a href="#portfolio" id="hero-view-projects-btn" class="btn btn-primary-dark hero-action-btn">
+                    <span>View Projects</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                  </a>
+
+                  <a href="Mahalakshmi_Ravichandran_Resume.pdf" download="Mahalakshmi_Ravichandran_Resume.pdf" target="_blank" rel="noopener noreferrer" id="hero-download-resume-btn" data-action="download-resume" class="btn btn-glass-hero hero-action-btn" aria-label="Download Resume PDF">
+                    <span>Download Resume</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/mahalakshmi-ravichandran-370a4939b" target="_blank" rel="noopener noreferrer" id="hero-linkedin-btn" class="btn btn-glass-hero hero-action-btn" aria-label="LinkedIn Profile">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+
+                <div class="hero-btn-row">
+                  <a href="https://github.com/Mahaeaswar123" target="_blank" rel="noopener noreferrer" id="hero-github-btn" class="btn btn-glass-hero hero-action-btn" aria-label="GitHub Profile">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>GitHub</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Statistics Pills (3+ Internships | 6 Projects Built | 7 Certifications) -->
+              <div class="hero-stats-pills hero-animate hero-anim-6" id="hero-stat-pills-row">
+                <div class="stat-pill-card">
+                  <span class="stat-pill-num" data-target="3" data-suffix="+">3+</span>
+                  <span class="stat-pill-label">Internships</span>
+                </div>
+                <div class="stat-pill-card">
+                  <span class="stat-pill-num" data-target="6" data-suffix="">6</span>
+                  <span class="stat-pill-label">Projects Built</span>
+                </div>
+                <div class="stat-pill-card">
+                  <span class="stat-pill-num" data-target="7" data-suffix="">7</span>
+                  <span class="stat-pill-label">Certifications</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Hero Column: Large Frosted Glass Showcase Panel -->
+            <div class="hero-right-visual hero-animate hero-anim-visual">
+              <div class="hero-glass-profile-panel" id="hero-visual-card">
+                
+                <!-- Background Subtle Dashed Orbital Arcs -->
+                <svg class="hero-orbital-arcs" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="230" cy="190" r="145" stroke="#B8A892" stroke-width="1.2" stroke-dasharray="3 4" stroke-opacity="0.45"/>
+                  <circle cx="230" cy="190" r="195" stroke="#B8A892" stroke-width="1.2" stroke-dasharray="4 6" stroke-opacity="0.25"/>
+                </svg>
+
+                <!-- Floating Resume Badges (Smoothly rotating through resume roles & skills) -->
+                <div class="hero-float-badge badge-top-left" id="hero-rotating-badge-left" role="status" aria-live="polite" title="Resume Credential">
+                  <div class="hero-badge-rotator" id="hero-badge-rotator-left">
+                    <span class="hero-badge-icon" id="hero-badge-left-icon">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </span>
+                    <span class="hero-badge-text" id="hero-badge-left-text">Full-Stack Developer</span>
+                  </div>
+                </div>
+
+                <div class="hero-float-badge badge-top-right" id="hero-rotating-badge-right" role="status" aria-live="polite" title="Resume Credential">
+                  <div class="hero-badge-rotator" id="hero-badge-rotator-right">
+                    <span class="hero-badge-icon" id="hero-badge-right-icon">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#8B7B68" stroke="none"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+                    </span>
+                    <span class="hero-badge-text" id="hero-badge-right-text">AI &amp; ML Enthusiast</span>
+                  </div>
+                </div>
+
+                <!-- Center Circular Profile Frame with Solid White Border -->
+                <div class="hero-avatar-circle-wrapper">
+                  <input type="file" accept="image/*" id="photoUpload" style="display:none">
+                  <div class="hero-avatar-frame has-photo" id="hero-avatar-container" role="button" tabindex="0" aria-label="Upload or change profile photo" style="background-image: url('profile-photo.jpg');">
+                    <div class="avatar-upload-prompt" id="avatar-upload-prompt" style="display:none;">
+                      <div class="avatar-upload-icon-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                          <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                      </div>
+                      <span class="avatar-upload-label">Upload</span>
+                    </div>
+                    <img id="avatar-preview-img" src="profile-photo.jpg" alt="Mahalakshmi Ravichandran" class="hero-avatar-img-circle" />
+                  </div>
+                </div>
+
+                <!-- Bottom Floating Glass Badge: Full-Stack & Flutter -->
+                <div class="hero-floating-card-pill">
+                  <div class="hero-focus-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="14" rx="3" ry="3"></rect>
+                      <line x1="8" y1="20" x2="16" y2="20"></line>
+                    </svg>
+                  </div>
+                  <div class="hero-focus-meta">
+                    <h3 class="hero-focus-title">Full-Stack &amp; Flutter</h3>
+                    <p class="hero-focus-desc">Web Apps, Mobile Architecture &amp; Applied AI</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SECTION 2: ABOUT (FOLLOWING SCREENSHOT 2 REFERENCE)
+           ================================================================== -->
+      <section id="about" class="reference-about-section reveal-on-scroll">
+        <div class="container">
+          <!-- Centered Section Header -->
+          <div class="about-header text-center">
+            <h2 class="about-section-heading">About Me</h2>
+            <p class="about-section-subheading">
+              Blending software engineering rigor, user empathy, and intelligent machine learning models.
+            </p>
+          </div>
+
+          <!-- Two-Column Layout Grid -->
+          <div class="about-two-column-layout">
+            
+            <!-- Left: Large Transparent Glass Card with Bio & 2x2 Details -->
+            <div class="about-main-glass-card glass-card">
+              <p class="about-bio-text">
+                Final-year <strong>B.Tech Information Science and Engineering</strong> student at <strong>Women’s Engineering College, Puducherry</strong>. Skilled in <strong>Full-Stack Development, Mobile App Development, and AI/ML</strong>, with hands-on experience in developing applications. Seeking a <strong>Software Developer</strong> role to apply my technical skills and contribute to innovative technology solutions.
+              </p>
+
+              <div class="about-hairline-divider" aria-hidden="true"></div>
+
+              <!-- 2x2 Grid of Personal Details -->
+              <div class="about-details-2x2-grid">
+                <!-- Detail 1: Location -->
+                <div class="about-detail-block">
+                  <div class="detail-icon-rounded-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                  <div class="detail-text-meta">
+                    <span class="detail-label-tag">LOCATION</span>
+                    <span class="detail-value-text">Puducherry, India</span>
+                  </div>
+                </div>
+
+                <!-- Detail 2: Email -->
+                <div class="about-detail-block">
+                  <div class="detail-icon-rounded-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <div class="detail-text-meta">
+                    <span class="detail-label-tag">EMAIL</span>
+                    <a href="mailto:mahaeaswar123@gmail.com" class="detail-value-text link-text" title="Send email to Mahalakshmi">mahaeaswar123@gmail.com</a>
+                  </div>
+                </div>
+
+                <!-- Detail 3: Phone -->
+                <div class="about-detail-block">
+                  <div class="detail-icon-rounded-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                  <div class="detail-text-meta">
+                    <span class="detail-label-tag">PHONE</span>
+                    <a href="tel:+919150526185" class="detail-value-text link-text">+91 9150526185</a>
+                  </div>
+                </div>
+
+                <!-- Detail 4: Profiles -->
+                <div class="about-detail-block">
+                  <div class="detail-icon-rounded-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div class="detail-text-meta">
+                    <span class="detail-label-tag">PROFILES</span>
+                    <span class="detail-value-text">
+                      <a href="https://www.linkedin.com/in/mahalakshmi-ravichandran-370a4939b" target="_blank" rel="noopener noreferrer" class="profile-link-inline">LinkedIn</a>
+                      <span class="bullet-divider">•</span>
+                      <a href="https://github.com/Mahaeaswar123" target="_blank" rel="noopener noreferrer" class="profile-link-inline">GitHub</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Three Separate Stacked Transparent Glass Cards -->
+            <div class="about-pillars-stack">
+              
+              <!-- Card 1: Full-Stack & Web Systems -->
+              <div class="about-pillar-glass-card glass-card">
+                <div class="pillar-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div class="pillar-card-content">
+                  <h3 class="pillar-card-title">Full-Stack &amp; Web Systems</h3>
+                  <p class="pillar-card-desc">
+                    Developing dynamic, performant web applications using React.js, Node.js, PHP, and SQL, complete with secure REST APIs and database modeling.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 2: Mobile Architecture (Flutter & Dart) -->
+              <div class="about-pillar-glass-card glass-card">
+                <div class="pillar-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                </div>
+                <div class="pillar-card-content">
+                  <h3 class="pillar-card-title">Mobile Architecture (Flutter &amp; Dart)</h3>
+                  <p class="pillar-card-desc">
+                    Crafting cross-platform mobile apps like VeeSafe with real-time reactive streams, clean state management, and Supabase integration.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Card 3: Deep Learning & Applied AI -->
+              <div class="about-pillar-glass-card glass-card">
+                <div class="pillar-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                </div>
+                <div class="pillar-card-content">
+                  <h3 class="pillar-card-title">Deep Learning &amp; Applied AI</h3>
+                  <p class="pillar-card-desc">
+                    Engineering transformer models (FT-Transformer) at NIT Puducherry for environmental risk classification, yielding 73.6% accuracy and 0.89 ROC-AUC.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SECTION 2: PORTFOLIO (THE ICONIC ARCH / ROUNDED GLASS CONTAINER)
+           ================================================================== -->
+      <section id="portfolio" class="editorial-portfolio-section reveal-on-scroll">
+        <div class="container">
+          <!-- The Grand Arch / Rounded Translucent Frosted Glass Container -->
+          <div class="portfolio-arch-container glass-card">
+            <div class="arch-header">
+              <span class="arch-section-tag">SELECTED WORKS</span>
+              <h2 class="arch-title">Portfolio</h2>
+              <p class="arch-subtitle">
+                Curated engineering works spanning applied deep learning, real-time mobile safety platforms, and dynamic web engines.
+              </p>
+            </div>
+
+            <!-- Horizontal Carousel with 5 Tall Rounded Glass Cards -->
+            <div class="portfolio-carousel-wrapper">
+              <!-- Previous Button -->
+              <button class="carousel-nav-btn prev-btn" id="carousel-prev" aria-label="Previous Projects">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+
+              <!-- Carousel Viewport (Clips cards neatly within container bounds) -->
+              <div class="portfolio-carousel-viewport" id="portfolio-carousel-viewport">
+                <!-- Carousel Track (Moves horizontally with smooth easing, drag, and swipe) -->
+                <div class="portfolio-carousel-track" id="portfolio-carousel-track" role="region" aria-label="Portfolio Projects Carousel">
+                  <!-- Card 1: Forest Fire -->
+                  <div class="portfolio-arch-card" data-project-index="0" role="button" tabindex="0" aria-label="Open Forest Fire Risk Assessment Case Study">
+                    <div class="arch-card-media">
+                      <img src="forest-fire-project.png" alt="Forest Fire Risk Deep Learning Model" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">DEEP LEARNING</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">JUN 2026</div>
+                      <h3 class="arch-card-name">Forest Fire Risk Assessment</h3>
+                      <p class="arch-card-snippet">FT-Transformer deep learning model classifying wildfire hazard with 73.6% accuracy and 0.89 ROC-AUC.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">Python</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2: VeeSafe -->
+                  <div class="portfolio-arch-card" data-project-index="1" role="button" tabindex="0" aria-label="Open VeeSafe Mobile App Case Study">
+                    <div class="arch-card-media">
+                      <img src="veesafe-project.png" alt="VeeSafe Mobile Safety App" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">MOBILE &amp; WEB</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">NOV 2025</div>
+                      <h3 class="arch-card-name">Portfolio Website &amp; VeeSafe App</h3>
+                      <p class="arch-card-snippet">Real-time distress alerting system and agency dashboard built with Flutter, React, and Supabase.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">Flutter</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3: Maze Game -->
+                  <div class="portfolio-arch-card" data-project-index="2" role="button" tabindex="0" aria-label="Open Maze Solver Game Case Study">
+                    <div class="arch-card-media">
+                      <img src="maze-game-project.png" alt="Maze Solver Interactive Game" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">INTERACTIVE WEB GAME</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">MAR 2026</div>
+                      <h3 class="arch-card-name">Maze Solver – Interactive Web Game</h3>
+                      <p class="arch-card-snippet">Created a responsive maze game using pure JavaScript with dynamic DFS-based procedural maze generation and BFS optimal pathfinding hints.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">HTML5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 4: CGPA Calculator -->
+                  <div class="portfolio-arch-card" data-project-index="3" role="button" tabindex="0" aria-label="Open CGPA Calculator Case Study">
+                    <div class="arch-card-media">
+                      <img src="cgpa-calculator.png" alt="CGPA Calculator Web App" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">WEB APPLICATION</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">JAN 2026</div>
+                      <h3 class="arch-card-name">CGPA Calculator Web App</h3>
+                      <p class="arch-card-snippet">Built an accessible web tool to compute SGPA and cumulative CGPA with dynamic course credit input fields and instant formula evaluation.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">HTML5</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 5: Bus Booking -->
+                  <div class="portfolio-arch-card" data-project-index="4" role="button" tabindex="0" aria-label="Open Bus Booking System Case Study">
+                    <div class="arch-card-media">
+                      <img src="bus-booking.png" alt="School Bus Booking System" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">FULL STACK SYSTEM</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">AUG 2025</div>
+                      <h3 class="arch-card-name">School Bus Booking System</h3>
+                      <p class="arch-card-snippet">Developed a responsive web application for student bus reservations with real-time automated receipt generation, PHP+MySQL backend, and robust form validation.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">HTML / CSS</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 6: NetChat -->
+                  <div class="portfolio-arch-card" data-project-index="5" role="button" tabindex="0" aria-label="Open NetChat TCP Socket Chat Application Case Study">
+                    <div class="arch-card-media">
+                      <img src="netchat-project.png" alt="NetChat TCP Socket Chat Application" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">TCP SOCKET &amp; PYTHON</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">APR 2026</div>
+                      <h3 class="arch-card-name">NetChat – TCP Socket Chat Application</h3>
+                      <p class="arch-card-snippet">Real-time multi-client chat system with Python TCP sockets, multithreading on port 9090, and dark terminal-style Tkinter GUI.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">Python</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 7: Smart Document Search Engine -->
+                  <div class="portfolio-arch-card" data-project-index="6" role="button" tabindex="0" aria-label="Open Smart Document Search Engine Case Study">
+                    <div class="arch-card-media">
+                      <img src="smart-search-project.png" alt="Smart Document Search Engine" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">FULL STACK &amp; NLP</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">2026</div>
+                      <h3 class="arch-card-name">Smart Document Search Engine</h3>
+                      <p class="arch-card-snippet">Document search engine extracting text from PDF, DOCX, and TXT files using TF-IDF and Cosine Similarity ranking.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">TypeScript</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 8: Dijkstra Routing Visualizer -->
+                  <div class="portfolio-arch-card" data-project-index="7" role="button" tabindex="0" aria-label="Open Dijkstra's Shortest Path Routing Visualizer Case Study">
+                    <div class="arch-card-media">
+                      <img src="dijkstra-routing-project.png" alt="Dijkstra's Shortest Path Routing Visualizer" draggable="false" />
+                      <div class="arch-card-glass-sheen"></div>
+                      <span class="arch-card-badge">ALGORITHMS &amp; NETWORKING</span>
+                    </div>
+                    <div class="arch-card-body">
+                      <div class="arch-card-category">2026</div>
+                      <h3 class="arch-card-name">Dijkstra Routing Visualizer</h3>
+                      <p class="arch-card-snippet">Python-based visualizer demonstrating Dijkstra's shortest path algorithm on a simulated 9-router network with dynamic cost routing tables.</p>
+                      <div class="arch-card-footer">
+                        <span class="tech-pill">Python</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Next Button -->
+              <button class="carousel-nav-btn next-btn" id="carousel-next" aria-label="Next Projects">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+
+            <!-- Carousel Pagination Indicator Dots -->
+            <div class="carousel-indicators" id="carousel-indicators" role="tablist" aria-label="Project slide navigation"></div>
+
+            <!-- "See all →" Toggle Button -->
+            <div class="arch-see-all-wrap">
+              <button class="btn btn-white-pill" id="toggle-all-projects-btn" aria-expanded="false" aria-controls="projects-detail-wrapper">
+                <span id="toggle-projects-text">See all projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+            </div>
+
+            <!-- Expandable Full Detailed Grid -->
+            <div class="projects-detail-wrapper" id="projects-detail-wrapper">
+              <div class="projects-grid" id="projects-grid">
+                <!-- Project cards dynamically rendered with full details from script.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Watermark (Matching reference aesthetic) -->
+          <div class="editorial-watermark" aria-hidden="true">MAHALAKSHMI</div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SECTION 3: SKILLS
+           ================================================================== -->
+      <section id="skills" class="reveal-on-scroll">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">CAPABILITIES &amp; TOOLSET</span>
+            <h2>Technical Skills</h2>
+            <p>Categorized competencies cultivated through production internships, academic research, and personal applications.</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- 1. Languages -->
+            <div id="skills-languages-card" class="glass-card skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                </div>
+                <h3 class="category-title">Languages</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> C</span>
+                <span class="skill-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> C++</span>
+                <span class="skill-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> SQL</span>
+                <span class="skill-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> Dart</span>
+              </div>
+            </div>
+
+            <!-- 2. Web Technologies -->
+            <div id="skills-web-card" class="glass-card skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <h3 class="category-title">Web Technologies</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">JavaScript (ES6+)</span>
+                <span class="skill-badge">PHP</span>
+                <span class="skill-badge">Responsive Design</span>
+              </div>
+            </div>
+
+            <!-- 3. Frameworks & Libraries -->
+            <div id="skills-frameworks-card" class="glass-card skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h3 class="category-title">Frameworks &amp; Libraries</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Flutter</span>
+                <span class="skill-badge">REST APIs</span>
+              </div>
+            </div>
+
+            <!-- 4. Backend & Databases -->
+            <div id="skills-backend-card" class="glass-card skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                </div>
+                <h3 class="category-title">Backend &amp; Databases</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Supabase</span>
+              </div>
+            </div>
+
+            <!-- 5. Design & Prototyping -->
+            <div id="skills-design-card" class="glass-card skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                </div>
+                <h3 class="category-title">Design Tools</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">UI/UX Prototyping</span>
+                <span class="skill-badge">Wireframing</span>
+              </div>
+            </div>
+
+            <!-- 6. Developer Tools -->
+            <div id="skills-tools-card" class="glass-card skill-category-card">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h3 class="category-title">Dev Tools</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">PyCharm</span>
+                <span class="skill-badge">Eclipse IDE</span>
+                <span class="skill-badge">XAMPP</span>
+                <span class="skill-badge">GitHub</span>
+              </div>
+            </div>
+
+            <!-- 7. Soft Skills (Full Width on 3-col or grouped) -->
+            <div id="skills-soft-card" class="glass-card skill-category-card" style="grid-column: 1 / -1;">
+              <div class="category-header">
+                <div class="category-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3 class="category-title">Soft Skills &amp; Leadership</h3>
+              </div>
+              <div class="skills-list">
+                <span class="skill-badge">People Management</span>
+                <span class="skill-badge">Technical Communication</span>
+                <span class="skill-badge">Cross-Functional Collaboration</span>
+                <span class="skill-badge">Agile Methodology</span>
+                <span class="skill-badge">Analytical Problem Solving</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SECTION 4: EXPERIENCE
+           ================================================================== -->
+      <section id="experience" class="reveal-on-scroll">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">CAREER TRAJECTORY</span>
+            <h2>Internships</h2>
+            <p>Practical software development and research internships delivering real-time mobile and web solutions.</p>
+          </div>
+
+          <div class="timeline-wrapper" id="experience-timeline-wrapper">
+            <!-- Dynamic Progressive Connecting Line -->
+            <div class="timeline-line-track"></div>
+            <div class="timeline-line-progress" id="timeline-line-progress"></div>
+
+            <!-- Experience Items dynamically rendered from experienceData in script.js -->
+            <div id="experience-timeline-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SECTION 5: EDUCATION
+           ================================================================== -->
+      <section id="education" class="reveal-on-scroll">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">ACADEMIC FOUNDATION</span>
+            <h2>Education</h2>
+            <p>Formal engineering degree in Information Science with a strong emphasis on systems and software craftsmanship.</p>
+          </div>
+
+          <div class="education-container">
+            <div id="edu-card-wec" class="glass-card education-card">
+              <div class="edu-icon-badge">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="edu-body">
+                <div class="edu-title-group">
+                  <h3 class="edu-degree">B.Tech Information Science and Engineering</h3>
+                  <span class="edu-duration">2023 – 2027</span>
+                </div>
+                <div class="edu-institution">Women's Engineering College, Lawspet, Puducherry</div>
+
+                <div class="edu-highlights">
+                  <div class="edu-stat-item">
+                    <span class="stat-header">Cumulative CGPA</span>
+                    <span class="stat-value">6.102 / 10</span>
+                  </div>
+                  <div class="edu-stat-item">
+                    <span class="stat-header">Academic Standing</span>
+                    <span class="stat-value" style="font-size:1.15rem; font-weight:600;">Final Year Student</span>
+                  </div>
+                </div>
+
+                <p class="edu-coursework">
+                  <strong>Core Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming (C++/Java), Relational Database Management Systems, Web Technologies, Computer Networks, Deep Learning &amp; AI, and Mobile Application Development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ==================================================================
+           SECTION 7: CERTIFICATIONS
+           ================================================================== -->
+      <section id="certifications" class="reveal-on-scroll">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">CREDENTIALS &amp; SPECIALIZATIONS</span>
+            <h2>Certifications</h2>
+            <p>Verified professional credentials across Artificial Intelligence, Modern Coding, Analytics, and Computer Teaching.</p>
+          </div>
+
+          <!-- NOTE: Google Drive folder access must be set to "Anyone with the link can view" to allow public access:
+               https://drive.google.com/drive/folders/1d5WdovaIt2dHU56_5n4wSRLD0Tb5OD2x -->
+          <div class="certifications-grid" id="certifications-grid">
+            <!-- Certification cards dynamically rendered from certificationsData in script.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           SECTION 8: CONTACT
+           ================================================================== -->
+      <section id="contact" class="reveal-on-scroll">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">START A CONVERSATION</span>
+            <h2>Get in Touch</h2>
+            <p>Whether you have an upcoming project, an opportunity, or wish to collaborate on mobile and web solutions, I'd love to hear from you.</p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Left: Contact Details & Social Icons -->
+            <div id="contact-info-panel" class="glass-card contact-info-card">
+              <div>
+                <h3 style="font-size:1.5rem; margin-bottom:1rem; color:var(--deep-accent);">Let's Connect</h3>
+                <p class="contact-info-text">
+                  I am currently open to full-time engineering roles, freelance Flutter/full-stack projects, and research collaborations.
+                </p>
+
+                <div class="contact-methods">
+                  <!-- Email -->
+                  <a href="mailto:mahaeaswar123@gmail.com" class="contact-method-item">
+                    <div class="contact-method-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div>
+                      <span class="contact-method-label">Direct Email</span>
+                      <div class="contact-method-val">mahaeaswar123@gmail.com</div>
+                    </div>
+                  </a>
+
+                  <!-- Phone -->
+                  <a href="tel:+919150526185" class="contact-method-item">
+                    <div class="contact-method-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div>
+                      <span class="contact-method-label">Direct Phone</span>
+                      <div class="contact-method-val">+91 9150526185</div>
+                    </div>
+                  </a>
+
+                  <!-- LinkedIn -->
+                  <a href="https://www.linkedin.com/in/mahalakshmi-ravichandran-370a4939b" target="_blank" rel="noopener noreferrer" class="contact-method-item">
+                    <div class="contact-method-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </div>
+                    <div>
+                      <span class="contact-method-label">LinkedIn Profile</span>
+                      <div class="contact-method-val">linkedin.com/in/mahalakshmi-ravichandran-370a4939b</div>
+                    </div>
+                  </a>
+
+                  <!-- GitHub -->
+                  <a href="https://github.com/Mahaeaswar123" target="_blank" rel="noopener noreferrer" class="contact-method-item">
+                    <div class="contact-method-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </div>
+                    <div>
+                      <span class="contact-method-label">GitHub Profile</span>
+                      <div class="contact-method-val">github.com/Mahaeaswar123</div>
+                    </div>
+                  </a>
+
+                  <!-- Location -->
+                  <div class="contact-method-item">
+                    <div class="contact-method-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div>
+                      <span class="contact-method-label">Location</span>
+                      <div class="contact-method-val">Puducherry, India</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Buttons -->
+              <div class="social-links-bar">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/mahalakshmi-ravichandran-370a4939b" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile" title="LinkedIn: linkedin.com/in/mahalakshmi-ravichandran-370a4939b">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/Mahaeaswar123" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile" title="GitHub: github.com/Mahaeaswar123">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:mahaeaswar123@gmail.com" class="social-btn" aria-label="Send Email">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+                <!-- Phone -->
+                <a href="tel:+919150526185" class="social-btn" aria-label="Direct Call">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Glass Form -->
+            <div id="contact-form-panel" class="glass-card contact-form-card">
+              <form id="portfolio-contact-form" novalidate>
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full Name</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="e.g. Priyadharshini S." required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="name@organization.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Message</label>
+                  <textarea id="contact-message" class="form-control" placeholder="Share a few words about your project or inquiry..." required></textarea>
+                </div>
+
+                <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width:100%;">
+                  <span>Send Message</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <div id="contact-form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================================================================
+         SECTION 10: FOOTER
+         ================================================================== -->
+    <footer id="footer">
+      <div class="container footer-inner">
+        <a href="#hero" id="footer-back-to-top" class="back-to-top-btn" aria-label="Scroll back to top">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          <span>Back to Top</span>
+        </a>
+        <div class="footer-social-links" style="display:flex; gap:0.75rem; align-items:center;">
+          <a href="https://www.linkedin.com/in/mahalakshmi-ravichandran-370a4939b" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile" title="LinkedIn: linkedin.com/in/mahalakshmi-ravichandran-370a4939b">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://github.com/Mahaeaswar123" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile" title="GitHub: github.com/Mahaeaswar123">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+        <p class="footer-copy">
+          &copy; 2026 Mahalakshmi Ravichandran. Crafted with HTML, CSS, &amp; JavaScript.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Floating Glass Back-to-Top Action Pill -->
+    <button id="floating-back-to-top" class="floating-back-to-top" aria-label="Scroll back to top" title="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Pure Vanilla JavaScript -->
+    <script src="./script.js"></script>
+  </body>
+</html>

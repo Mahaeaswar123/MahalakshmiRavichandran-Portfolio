@@ -78,7 +78,7 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
-  background-image: url('/warm-architectural-bg.jpg');
+  background-image: url('warm-architectural-bg.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

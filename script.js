@@ -1618,7 +1618,7 @@ function initPortfolio() {
     }
   }
 
-  // Check for previously uploaded photo in localStorage
+  // Check for previously uploaded photo in localStorage, otherwise use default
   try {
     const savedPhoto = localStorage.getItem('portfolio_user_photo');
     if (savedPhoto) {
@@ -1630,9 +1630,19 @@ function initPortfolio() {
     setAvatarPhoto(DEFAULT_PHOTO_URL);
   }
 
-  // Image error handling: if image is not yet available, show clean upload prompt
+  // Image error handling: if a custom image fails, revert to default; if default fails, show upload prompt
   if (previewImg) {
     previewImg.addEventListener('error', () => {
+      const currentSrc = previewImg.getAttribute('src');
+      if (currentSrc && currentSrc !== DEFAULT_PHOTO_URL && !previewImg.src.endsWith(DEFAULT_PHOTO_URL)) {
+        try {
+          localStorage.removeItem('portfolio_user_photo');
+        } catch (e) {
+          // ignore
+        }
+        setAvatarPhoto(DEFAULT_PHOTO_URL);
+        return;
+      }
       if (mainCircle) {
         mainCircle.classList.remove('has-photo');
         mainCircle.style.backgroundImage = '';

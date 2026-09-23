@@ -1578,7 +1578,7 @@ function initPortfolio() {
   const photoAuthCancel = document.getElementById('photo-auth-cancel');
   const togglePwdVisibility = document.getElementById('toggle-pwd-visibility');
 
-  const DEFAULT_PHOTO_URL = 'maha_img1.jpeg';
+  const DEFAULT_PHOTO_URL = 'maha_maha.jpeg.jpeg';
   // Cryptographic SHA-256 hash of the default owner secret key (never stored in plaintext)
   const SECURE_OWNER_HASH = 'e4cbb95fc626c9ddb979c7d3309658a4ccaa7aa4a540d68b1f93323e94243f57';
 

@@ -49,6 +49,43 @@ const projectsData = [
     </svg>`
   },
   {
+    title: 'Ransomware Detection & Prevention System',
+    dateRange: 'Innovation Fest 2026 (Team project)',
+    techStack: ['Python', 'Flask', 'watchdog', 'psutil'],
+    description: 'A rule-based heuristic security prototype that monitors Windows file activity in real time, classifies rapid encryption behavior into risk tiers, and alerts administrators via an interactive Flask dashboard to terminate suspicious processes upon user confirmation.',
+    keyFeatures: [
+      'Real-time monitoring of the Windows user folder and subfolders',
+      'Detection of file create/modify/delete/move events',
+      'LOW/MEDIUM/HIGH risk classification using a rolling 10-second window (HIGH: 20+ events and 10+ unique files; MEDIUM: 10+ events and 5+ unique files)',
+      'Flask dashboard with alerts and process identification with psutil',
+      'User-confirmed attempt to terminate the process on HIGH risk'
+    ],
+    architecture: 'Background watchdog observer captures Windows directory filesystem events. A rolling 10-second heuristic sliding window evaluates volume and unique affected files, categorizing risk tiers. The Flask web console streams live alerts, identifies originating process IDs using psutil, and executes a user-confirmed process termination attempt upon critical threat confirmation.',
+    category: 'Hackathon Project, AI Cyber Security',
+    githubLink: '#',
+    githubText: 'GitHub Repo',
+    svg: `<svg class="project-thumbnail" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="240" fill="#18151D"/>
+      <rect x="35" y="25" width="330" height="190" rx="12" fill="#221C28" stroke="#E55353" stroke-width="1.5"/>
+      <rect x="35" y="25" width="330" height="34" rx="12" fill="#1C1722"/>
+      <circle cx="56" cy="42" r="5.5" fill="#E55353"/>
+      <circle cx="72" cy="42" r="5.5" fill="#E5A93C"/>
+      <circle cx="88" cy="42" r="5.5" fill="#2ECC71"/>
+      <text x="110" y="46" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#F4EFE8">RANSOMWARE SENTINEL DASHBOARD</text>
+      <rect x="55" y="75" width="135" height="52" rx="8" fill="#2C2233" stroke="#E55353" stroke-width="1"/>
+      <text x="68" y="93" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#E55353">THREAT STATUS: HIGH</text>
+      <text x="68" y="112" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">PID 4192 (suspect.exe)</text>
+      <rect x="210" y="75" width="135" height="52" rx="8" fill="#2C2233" stroke="#A8987F" stroke-width="1"/>
+      <text x="223" y="93" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600" fill="#A8987F">WINDOW ACTIVITY</text>
+      <text x="223" y="112" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">24 events / 10s (12 files)</text>
+      <rect x="55" y="142" width="290" height="22" rx="5" fill="#321D24"/>
+      <text x="68" y="157" font-family="'Courier New', monospace" font-size="9" fill="#FF7B72">[ALERT] Rapid file modifications detected in \\Users</text>
+      <rect x="55" y="174" width="170" height="26" rx="6" fill="#E55353"/>
+      <text x="75" y="191" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">TERMINATE PROCESS [CONFIRM]</text>
+      <text x="240" y="191" font-family="'Courier New', monospace" font-size="8.5" fill="#A8987F">psutil · watchdog</text>
+    </svg>`
+  },
+  {
     title: 'Portfolio Website & VeeSafe Real-Time Safety App',
     dateRange: 'Nov 2025 – Present',
     techStack: ['React', 'Node.js', 'Dart', 'Supabase'],
